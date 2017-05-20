@@ -2,7 +2,7 @@ import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertEquals;
 import java.util.ArrayList;
 import org.junit.*;
-
+import blackjack.*;
 public class HandTest {
   Hand hand;
   Card card;

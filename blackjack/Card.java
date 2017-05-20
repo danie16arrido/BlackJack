@@ -1,3 +1,5 @@
+package blackjack;
+import interfaces.*;
 public class Card implements ICard {
 
   private final int rank;

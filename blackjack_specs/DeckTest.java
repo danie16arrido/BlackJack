@@ -1,6 +1,8 @@
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertEquals;
 import org.junit.*;
+import interfaces.*;
+import blackjack.*;
 
 public class DeckTest {
   Deck deck;

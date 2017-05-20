@@ -1,3 +1,4 @@
+package interfaces;
 public interface ICard {
 
   public static final int CLUBS = 0;
