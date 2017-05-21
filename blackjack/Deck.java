@@ -10,8 +10,6 @@ public class Deck implements CardCollectionable{
 
   public Deck(){
     this.cardList = new ArrayList<ICard>();
-    populateDeck();
-    shuffle();
   }
 
   public void addIcard(ICard card){
@@ -32,6 +30,7 @@ public class Deck implements CardCollectionable{
 				this.cardList.add(new Card(rank, suit));
       }
 		}
+    shuffle();
   }
 
   private void shuffle(){
@@ -44,6 +43,9 @@ public class Deck implements CardCollectionable{
 		index++;
 		return card;
 	}
+  public ICard deal(){
+    return next();
+  }
 
   public boolean hasNext(){
     return index < this.cardList.size();
@@ -55,6 +57,10 @@ public class Deck implements CardCollectionable{
 
   public int getMyIndex(){
     return this.index;
+  }
+
+  public void clear(){
+    this.cardList.clear();
   }
 
 

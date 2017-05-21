@@ -2,8 +2,7 @@ package blackjack;
 import java.util.ArrayList;
 import java.util.Collections;
 import interfaces.*;
-
-public class Hand implements CardCollectionable {
+public class Hand {
 
   private ArrayList<ICard> cardsInHand;
 
@@ -30,13 +29,5 @@ public class Hand implements CardCollectionable {
   public void clear(){
     this.cardsInHand.clear();
   }
-
-  // public int sum(){
-  //   int sum = 0;
-  //   for ( ICard icard : cardsInHand){
-  //     sum = sum + icard.getRank();
-  //   }
-  //   return sum;
-  // }
 
 }

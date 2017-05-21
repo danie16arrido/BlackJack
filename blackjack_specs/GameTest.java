@@ -7,11 +7,15 @@ import blackjack.*;
 public class GameTest {
   Game game;
   Player player;
+  Player dealer;
+  Deck deck;
 
   @Before
   public void before(){
     game = new Game();
     player = new Player("Daniel");
+    dealer = new Player("Dealer");
+    deck = new Deck();
   }
 
   @Test
@@ -37,7 +41,15 @@ public class GameTest {
 
   @Test
   public void canAddDeck(){
+    game.addDeck(deck);
     assertEquals(true, game.getDeck() instanceof Deck);
+  }
+
+  @Test
+  public void canInitializeGame(){
+    deck.populateDeck();
+    game.start(player, deck);
+    assertEquals(2, player.getHand().numberOfCards());
   }
 
 }
