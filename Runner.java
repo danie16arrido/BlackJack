@@ -38,9 +38,7 @@ public class Runner {
       Player dealer = game.getPlayersList().get(0);
       dealer.getHand().clear();
 
-      System.out.println("bideal");
       game.initialDeal();
-
       boolean isUserActive = true;
 
       System.out.println("<BlackJack> " + playerName + " is playing now.");
@@ -51,7 +49,6 @@ public class Runner {
 
       switch (selection){
         case 1:
-
           clearScreen();
           do {
             System.out.println(game.getDeck().getMyIndex());
@@ -59,7 +56,6 @@ public class Runner {
             System.out.println("\tTotal: " + game.handPlayerSum(player) + "\tWins: [" + player.getWins() + "]");
             showHand(dealer);
             System.out.println("\tTotal: " + game.handPlayerSum(dealer) + "\tWins: [" + dealer.getWins() + "]");
-            System.out.println(dealer.getWins());
 
             if (game.checkBlackJack(dealer)){
               System.out.println("Dealer Wins");
