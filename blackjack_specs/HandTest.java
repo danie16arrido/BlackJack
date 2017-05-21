@@ -3,6 +3,7 @@ import static org.junit.Assert.assertEquals;
 import java.util.ArrayList;
 import org.junit.*;
 import blackjack.*;
+
 public class HandTest {
   Hand hand;
   Card card;
@@ -24,9 +25,17 @@ public class HandTest {
   }
 
   @Test
-  public void canAddCardToHand(){
-    hand.addCard(card);
+  public void canAddICardToHand(){
+    hand.addIcard(card);
     assertEquals(1, hand.numberOfCards());
+  }
+
+  @Test
+  public void canRemoveICardToHand(){
+    hand.addIcard(card);
+    assertEquals(1, hand.numberOfCards());
+    hand.removeIcard(card);
+    assertEquals(0, hand.numberOfCards());
   }
 
   @Test
@@ -36,13 +45,11 @@ public class HandTest {
 
   @Test
   public void canClearHand(){
-    hand.addCard(card);
-    hand.addCard(card);
+    hand.addIcard(card);
+    hand.addIcard(card);
     assertEquals(2, hand.numberOfCards());
     hand.clear();
     assertEquals(0, hand.numberOfCards());
   }
-
-
 
 }

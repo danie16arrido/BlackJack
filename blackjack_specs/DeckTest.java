@@ -19,11 +19,18 @@ public class DeckTest {
     assertEquals(true, deck instanceof Deck);
   }
 
-  // @Test
-  // public void canAddCardToDeck(){
-  //   deck.addCard(card);
-  //   assertEquals(1, deck.numberOfCards());
-  // }
+  @Test
+  public void canAddICard(){
+    deck.addIcard(card);
+    assertEquals(53, deck.numberOfCards());
+  }
+
+  @Test
+  public void canRemoveICard(){
+    ICard second = deck.getCard(1);
+    deck.removeIcard(second);
+    assertEquals(51, deck.numberOfCards());
+  }
 
   @Test
   public void canPopulateDeck(){

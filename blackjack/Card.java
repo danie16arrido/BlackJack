@@ -10,6 +10,10 @@ public class Card implements ICard {
 		"clubs", "diamonds", "hearts", "spades"
 	};
 
+  private static final char[] suitSymbol = {
+    '\u2663', '\u2666', '\u2764', '\u2660'
+  };
+
   private static final String[] rankStrings = {
 		"cero","ace","two","three","four","five",
 		"six","seven","eight","nine","ten",

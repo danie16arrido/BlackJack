@@ -3,7 +3,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import interfaces.*;
 
-public class Deck {
+public class Deck implements CardCollectionable{
 
   private ArrayList<ICard> cardList;
   private int index;
@@ -14,8 +14,12 @@ public class Deck {
     shuffle();
   }
 
-  public void addCard(ICard card){
+  public void addIcard(ICard card){
     this.cardList.add(card);
+  }
+
+  public void removeIcard(ICard card){
+    this.cardList.remove(card);
   }
 
   public int numberOfCards(){
