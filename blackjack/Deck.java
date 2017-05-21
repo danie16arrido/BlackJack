@@ -6,7 +6,7 @@ import interfaces.*;
 public class Deck implements CardCollectionable{
 
   private ArrayList<ICard> cardList;
-  private int index;
+  private int index = 0;
 
   public Deck(){
     this.cardList = new ArrayList<ICard>();

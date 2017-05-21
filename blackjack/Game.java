@@ -37,7 +37,7 @@ public class Game {
     addDeck(deck);
     addPlayer(this.dealer);
     addPlayer(player);
-    initialDeal();
+    // initialDeal();
   }
 
   public void initialDeal(){
@@ -92,12 +92,5 @@ public class Game {
   public boolean checkBusted(Player player){
     return (checkBlackJackState(player) == -1) ? true: false;
   }
-
-
-
-
-
-
-
 
 }

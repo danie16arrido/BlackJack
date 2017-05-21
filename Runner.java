@@ -22,17 +22,25 @@ public class Runner {
     System.out.println("Welcome to <BlackJack>");
     System.out.print("Enter your name:  ");
     playerName = user_input.next();
+    Game game = new Game();
+    Player player = new Player(playerName);
+    Deck deck = new Deck();
+    deck.populateDeck();
+
+    game.start(player, deck);
+
+
 
     clearScreen();
 
     do {
-      Game game = new Game();
-      Deck deck = new Deck();
-      deck.populateDeck();
-
-      Player player = new Player(playerName);
-      game.start(player, deck);
+      player.getHand().clear();
       Player dealer = game.getPlayersList().get(0);
+      dealer.getHand().clear();
+
+      System.out.println("bideal");
+      game.initialDeal();
+
       boolean isUserActive = true;
 
       System.out.println("<BlackJack> " + playerName + " is playing now.");
@@ -43,39 +51,49 @@ public class Runner {
 
       switch (selection){
         case 1:
+
           clearScreen();
           do {
+            System.out.println(game.getDeck().getMyIndex());
             showHand(player);
-            System.out.println("\tTotal: " + game.handPlayerSum(player));
+            System.out.println("\tTotal: " + game.handPlayerSum(player) + "\tWins: [" + player.getWins() + "]");
             showHand(dealer);
-            System.out.println("\tTotal: " + game.handPlayerSum(dealer));
+            System.out.println("\tTotal: " + game.handPlayerSum(dealer) + "\tWins: [" + dealer.getWins() + "]");
+            System.out.println(dealer.getWins());
 
             if (game.checkBlackJack(dealer)){
               System.out.println("Dealer Wins");
+              dealer.addWin();
+
               break;
             }
             if (game.checkBlackJack(player)){
               System.out.println("Player Wins");
+              player.addWin();
               break;
             }
             if (game.checkBusted(player)){
               System.out.println("Player busted!!");
+              dealer.addWin();
               break;
             }
             if(game.checkBusted(dealer)){
               System.out.println("Player Wins");
+              player.addWin();
               break;
             }
             if (!isUserActive){
               int difference = game.handPlayerSum(player) - game.handPlayerSum(dealer);
               if (difference > 0){
                 System.out.println("Player Wins");
+                player.addWin();
                 break;
               }else if (difference == 0){
                 System.out.println("It is a draw");
                 break;
               }else if (difference < 0 ){
                 System.out.println("Dealer wins!");
+                dealer.addWin();
                 break;
               }
             }

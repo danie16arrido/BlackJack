@@ -26,4 +26,10 @@ public class PlayerTest {
 
     assertEquals(true , player.getHand() instanceof Hand);
   }
+
+  @Test
+  public void canAddWin(){
+    player.addWin();
+    assertEquals(1, player.getWins());
+  }
 }
