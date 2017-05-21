@@ -34,7 +34,7 @@ public class Card implements ICard {
     return this.suite;
   }
 
-  public String getStringName(){
+  private String getStringName(){
     String myname = rankStrings[this.rank] + " of " + suitString[this.suite];
     return myname;
   }
