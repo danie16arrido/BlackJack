@@ -8,7 +8,9 @@ public class Player {
 
   public Player(String name){
     this.name = name;
-    this.hand = new Hand();
+    this.hand = new Hand();//breaks the "Dependency inversion principal"
+    //a higher object must set the hand and the hand may be different
+    //depending on the game being played.
     this.handsWon = 0;
   }
 
