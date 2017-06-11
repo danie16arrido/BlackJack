@@ -1,4 +1,6 @@
-# Homework
+## Screenshot of the runner
+
+![blackJack](https://github.com/danie16arrido/BlackJack/blob/master/Screen%20Shot%20Runner.png)
 
 This weekend's homework is to build the card game you planned on Wednesday.
 
@@ -25,6 +27,4 @@ You're going to try and build some variations of Blackjack.
 - Compare hands once both players have stuck.
 - If you get to this point, have a nice long rest. Then, if you really want to keep coding, trying implementing doubling down or something. Though, to be honest, I don't even know what doubling down is. I just know it's a Blackjack thing.
 
-## Screenshot of the runner
 
-![blackJack](https://github.com/danie16arrido/BlackJack/blob/master/Screen%20Shot%20Runner.png)
